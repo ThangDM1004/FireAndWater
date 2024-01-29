@@ -5,8 +5,11 @@ using UnityEngine;
 public class ElevatorMove : MonoBehaviour
 {
     public Transform posA, posB;
-    int speed = 2;
+    int speed = 1;
     Vector2 targetPos;
+    bool IsSwitch = false;
+    [SerializeField] private GameObject evelator;
+    private bool hasTrigger;
     void Start()
     {
         targetPos = posB.position;
@@ -14,8 +17,20 @@ public class ElevatorMove : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, posA.position) < .1f) targetPos = posB.position;
+        if (IsSwitch)
+        {
+            if (Vector2.Distance(evelator.transform.position, posA.position) < .1f) targetPos = posB.position;
+            if (Vector2.Distance(evelator.transform.position, posB.position) < .1f) targetPos = posA.position;
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+            evelator.transform.position = Vector2.MoveTowards(evelator.transform.position, targetPos, speed * Time.deltaTime);
+        }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((collision.CompareTag("PlayerWater") || collision.CompareTag("PlayerFire")) && !hasTrigger)
+        {
+            IsSwitch = !IsSwitch;
+        }
+    }
+
 }
