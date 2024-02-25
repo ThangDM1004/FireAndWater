@@ -10,6 +10,11 @@ TagManager:
   - Switch
   - PlayerWater
   - PlayerFire
+  - RedGem
+  - BlueGem
+  - ChestQuestion
+  - waterDoor
+  - fireDoor
   layers:
   - Default
   - TransparentFX
