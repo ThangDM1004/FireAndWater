@@ -2227,6 +2227,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "th\xE1ng 5"
       objectReference: {fileID: 0}
+    - target: {fileID: 2375100259367489530, guid: b0eb4b7538fca6e43b71a94209e762ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2851593379175375545, guid: b0eb4b7538fca6e43b71a94209e762ab, type: 3}
       propertyPath: m_text
       value: "c\u1EA3 n\u0103m"
