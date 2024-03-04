@@ -32,6 +32,9 @@ public class GemManager : MonoBehaviour
                 case 3:
                     SceneManager.LoadScene(4);
                     break;
+                case 4:
+                    SceneManager.LoadScene(5);
+                    break;
                 default: break;
             }
 
